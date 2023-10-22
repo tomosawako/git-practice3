@@ -16,7 +16,7 @@
       <h1 class="headline">All lists</h1>
     </header>
     <nav>
-      <ul clss="nav-list">
+      <ul class="nav-list">
         <li class="nav-list-item">
           <%= link_to"Top", top_path %>
         </li>
@@ -29,6 +29,9 @@
       </ul>
     </nav>
     <main>
+     <% flash.each do |message_type,message| %>
+      <div class="flash-message <%= message_type %>"><%= message %></div>
+     <% end %>
     <%= yield %>
     </main>
 
